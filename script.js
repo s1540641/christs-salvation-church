@@ -1,3 +1,3 @@
-function donate() {
-    alert("Thank you for your support! We will add a real donation system soon.");
+function welcome() {
+    alert("Come worship with us!");
 }
