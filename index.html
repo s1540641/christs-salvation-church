@@ -1,42 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christ Salvation Church</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>Christ Salvation Church</h1>
-        <p>Christ Salvation Church was established on April 30, 2017 by Reverend Muhizi Serukiza and his wife, Pastor Nabihogo Immaculee.
-            They envisioned a church where people could come together to worship God, grow in their faith, and serve their community. 
-            Where members are not just bench warmers but active participants in the life of the church and the community.
-            They believe everyone on this earth has been given a mission, and we are able to do our mission through Christ who strengthens us.
-        </p>
-    </header>
-    
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We believe in God the Father, the Son, and the Holy Spirit.
-            We strongly believe in the Bible as the inspired and infallible word of God.
-            We are committed to living out our faith through love, compassion, and service to others.
-            Our mission is to support and uplift the community through faith and service.
-            Join us in making a positive impact in different parts of our community.
-            If you are looking for a place to belong, grow, and serve, Christ Salvation Church is the place for you.
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Christ’s Salvation Church</title>
 
-        </p>
-    </section>
-    
-    <section id="welcome">
-        <h2>Christ Salvation Church</h2>
-        <button onclick="welcome()">welcome</button>
-    </section>
-    
-    <footer>
-        <p>&copy; 2025 Christ Salvation Church</p>
-    </footer>
-    
-    <script src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Palette ──────────────────────────────────────────── */
+    :root {
+      --white:      #EDEEE9;
+      --pool:       #B2E1DE;
+      --ionian:     #308874;
+      --fresh:      #4BA5B2;
+      --sea:        #B0BFA7;
+      --grass:      #8E773F;
+      --black:      #2F2F30;
+      --serif:      'Cormorant Garamond', Georgia, serif;
+      --sans:       'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(237,238,233,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(48,136,116,0.12);
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      color: var(--ionian);
+    }
+    .nav-logo span { color: var(--grass); }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+    .nav-links a:hover { color: var(--ionian); opacity: 1; }
+    .nav-cta {
+      background: var(--ionian);
+      color: var(--white) !important;
+      padding: 0.5rem 1rem;
+      border-radius: 2px;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .hero-left {
+      padding: 8rem 4rem 4rem 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-eyebrow {
+      color: var(--grass);
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      margin-bottom: 1rem;
+    }
+    .hero-title {
+      font-family: var(--serif);
+      font-size: 4rem;
+      line-height: 1.1;
+    }
+    .hero-title em { color: var(--ionian); }
+    .hero-sub { margin-top: 1rem; max-width: 40ch; }
+
+    .btn-primary {
+      background: var(--ionian);
+      color: white;
+      padding: 0.9rem 2rem;
+      display: inline-block;
+      margin-top: 2rem;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    /* SERVICE */
+    .service-strip {
+      display: flex;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .service-label { font-size: 0.7rem; color: var(--grass); }
+    .service-time { font-family: var(--serif); }
+
+    /* HERO RIGHT */
+    .hero-right {
+      background: var(--ionian);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem;
+    }
+    .hero-quote {
+      color: white;
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-style: italic;
+    }
+
+    /* WELCOME */
+    .welcome {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+    }
+    .welcome-label {
+      background: var(--sea);
+      padding: 4rem;
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+      text-transform: uppercase;
+      font-size: 0.7rem;
+    }
+    .welcome-body {
+      padding: 4rem;
+    }
+
+    /* VISIT */
+    .visit {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .visit-info { padding: 4rem; background: var(--sea); }
+    .visit-map { height: 100%; min-height: 400px; }
+
+    /* NEWSLETTER */
+    .newsletter {
+      background: var(--ionian);
+      padding: 4rem;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      background: var(--black);
+      color: white;
+      padding: 3rem;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-logo">Christ’s <span>Salvation</span> Church</div>
+  <ul class="nav-links">
+    <li><a href="#welcome">About</a></li>
+    <li><a href="#visit">Visit</a></li>
+    <li><a href="#newsletter" class="nav-cta">Connect</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Kansas City, MO — Est. 2017</p>
+
+    <h1 class="hero-title">
+      Welcome to<br>
+      Christ’s <em>Salvation</em> Church
+    </h1>
+
+    <p class="hero-sub">
+      We believe in the Trinity and salvation through Jesus Christ. All are welcome.
+    </p>
+
+    <a class="btn-primary" href="#visit">Visit Us</a>
+
+    <div class="service-strip">
+      <div>
+        <p class="service-label">Sunday</p>
+        <p class="service-time">1:30 - 4:30 pm</p>
+      </div>
+      <div>
+        <p class="service-label">Youth Fri</p>
+        <p class="service-time">7:00 pm</p>
+      </div>
+      <div>
+        <p class="service-label">Youth Sat</p>
+        <p class="service-time">5:30 pm</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <p class="hero-quote">
+      “Go and make disciples of all nations.”
+      <br><br>— Matthew 28:19
+    </p>
+  </div>
+</section>
+
+<section class="welcome" id="welcome">
+  <div class="welcome-label">Our Faith</div>
+  <div class="welcome-body">
+    <h2>Rooted in Christ, grounded in Scripture.</h2>
+    <p>
+      Christ’s Salvation Church is a Bible-believing church founded in 2017 in Kansas City, Missouri.
+      We exist to preach the Gospel and make disciples of Jesus Christ.
+    </p>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="visit-info">
+    <h2>Visit Us</h2>
+
+    <p><strong>Address:</strong><br>2910 Victor St<br>Kansas City, MO 64128</p>
+    <br>
+    <p><strong>Phone:</strong> 816-492-8571</p>
+    <p><strong>Pastor:</strong> Muhizi Serukiza</p>
+    <p><strong>Email:</strong> mserukiza@gmail.com</p>
+  </div>
+
+  <div class="visit-map">
+    <iframe
+      width="100%"
+      height="100%"
+      style="border:0"
+      loading="lazy"
+      allowfullscreen
+      src="https://www.google.com/maps?q=2910+Victor+St+Kansas+City+MO+64128&output=embed">
+    </iframe>
+  </div>
+</section>
+
+<section class="newsletter" id="newsletter">
+  <h3>Stay connected with our church family.</h3>
+  <input type="email" placeholder="Your email" />
+</section>
+
+<footer>
+  <p>© 2026 Christ’s Salvation Church</p>
+  <p>YouTube: CSC International USA | Instagram: salvation_choirusa</p>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
