@@ -1,275 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Christ’s Salvation Church</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-
-  <style>
-    /* ── Palette ──────────────────────────────────────────── */
-    :root {
-      --white:      #EDEEE9;
-      --pool:       #B2E1DE;
-      --ionian:     #308874;
-      --fresh:      #4BA5B2;
-      --sea:        #B0BFA7;
-      --grass:      #8E773F;
-      --black:      #2F2F30;
-      --serif:      'Cormorant Garamond', Georgia, serif;
-      --sans:       'DM Sans', sans-serif;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--white);
-      color: var(--black);
-      font-family: var(--sans);
-      font-weight: 300;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      padding: 1.25rem 3rem;
-      background: rgba(237,238,233,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(48,136,116,0.12);
-    }
-    .nav-logo {
-      font-family: var(--serif);
-      font-size: 1.25rem;
-      color: var(--ionian);
-    }
-    .nav-logo span { color: var(--grass); }
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      opacity: 0.7;
-    }
-    .nav-links a:hover { color: var(--ionian); opacity: 1; }
-    .nav-cta {
-      background: var(--ionian);
-      color: var(--white) !important;
-      padding: 0.5rem 1rem;
-      border-radius: 2px;
-    }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-    .hero-left {
-      padding: 8rem 4rem 4rem 5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .hero-eyebrow {
-      color: var(--grass);
-      text-transform: uppercase;
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      margin-bottom: 1rem;
-    }
-    .hero-title {
-      font-family: var(--serif);
-      font-size: 4rem;
-      line-height: 1.1;
-    }
-    .hero-title em { color: var(--ionian); }
-    .hero-sub { margin-top: 1rem; max-width: 40ch; }
-
-    .btn-primary {
-      background: var(--ionian);
-      color: white;
-      padding: 0.9rem 2rem;
-      display: inline-block;
-      margin-top: 2rem;
-      text-transform: uppercase;
-      font-size: 0.8rem;
-    }
-
-    /* SERVICE */
-    .service-strip {
-      display: flex;
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-    .service-label { font-size: 0.7rem; color: var(--grass); }
-    .service-time { font-family: var(--serif); }
-
-    /* HERO RIGHT */
-    .hero-right {
-      background: var(--ionian);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 3rem;
-    }
-    .hero-quote {
-      color: white;
-      font-family: var(--serif);
-      font-size: 1.5rem;
-      font-style: italic;
-    }
-
-    /* WELCOME */
-    .welcome {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-    }
-    .welcome-label {
-      background: var(--sea);
-      padding: 4rem;
-      writing-mode: vertical-lr;
-      transform: rotate(180deg);
-      text-transform: uppercase;
-      font-size: 0.7rem;
-    }
-    .welcome-body {
-      padding: 4rem;
-    }
-
-    /* VISIT */
-    .visit {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-    .visit-info { padding: 4rem; background: var(--sea); }
-    .visit-map { height: 100%; min-height: 400px; }
-
-    /* NEWSLETTER */
-    .newsletter {
-      background: var(--ionian);
-      padding: 4rem;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    footer {
-      background: var(--black);
-      color: white;
-      padding: 3rem;
-    }
-
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Christ's Salvation Church | Faith. Serve. Transformation.</title>
+  <meta name="description" content="Christ's Salvation Church: worship, community outreach, and support for our neighbors.">
+  <link rel="icon" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-<nav>
-  <div class="nav-logo">Christ’s <span>Salvation</span> Church</div>
-  <ul class="nav-links">
-    <li><a href="#welcome">About</a></li>
-    <li><a href="#visit">Visit</a></li>
-    <li><a href="#newsletter" class="nav-cta">Connect</a></li>
-  </ul>
-</nav>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="wrap bar">
+    <a href="#top" class="brand"><img src="images/logo-white.png" alt="Christ's Salvation Church"></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav-list">Menu</button>
+    <nav aria-label="Main">
+      <ul id="nav-list">
+        <li><a href="#new">I'm New</a></li>
+        <li><a href="#watch">Watch</a></li>
+        <li><a href="#ministries">Ministries</a></li>
+        <li><a href="#visits">Site Visits</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#conference">Conference</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="btn btn-orange" href="#give">Give</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-<section class="hero">
-  <div class="hero-left">
-    <p class="hero-eyebrow">Kansas City, MO — Est. 2017</p>
+<main id="top">
 
-    <h1 class="hero-title">
-      Welcome to<br>
-      Christ’s <em>Salvation</em> Church
-    </h1>
-
-    <p class="hero-sub">
-      We believe in the Trinity and salvation through Jesus Christ. All are welcome.
-    </p>
-
-    <a class="btn-primary" href="#visit">Visit Us</a>
-
-    <div class="service-strip">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-photo" style="background-image:url('images/hero.png')"></div>
+    <div class="wrap hero-grid">
       <div>
-        <p class="service-label">Sunday</p>
-        <p class="service-time">1:30 - 4:30 pm</p>
+        <h1>Come as you are.</h1>
+        <p class="lead">Faith. Serve. Transformation. Join a church family that loves God and serves our city.</p>
+        <div class="btn-row">
+          <a class="btn btn-orange" href="#new">Plan your visit</a>
+          <a class="btn btn-outline" href="#watch">Watch online</a>
+        </div>
       </div>
-      <div>
-        <p class="service-label">Youth Fri</p>
-        <p class="service-time">7:00 pm</p>
-      </div>
-      <div>
-        <p class="service-label">Youth Sat</p>
-        <p class="service-time">5:30 pm</p>
-      </div>
+      <aside class="times">
+        <h2>Join us this weekend</h2>
+        <ul>
+          <li><span>Sunday</span><b>9:00 AM</b></li>
+          <li><span>Sunday</span><b>11:00 AM</b></li>
+          <li><span>Wednesday</span><b>7:00 PM</b></li>
+        </ul>
+        <p class="small">Your Street Address, City, ST 00000</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- QUICK ACTIONS -->
+  <div class="quick">
+    <div class="wrap">
+      <a href="#watch">Watch online<span>New message weekly</span></a>
+      <a href="#new">Plan a visit<span>What to expect</span></a>
+      <a href="#give">Give<span>Support our outreach</span></a>
+      <a href="#contact">Contact us<span>Talk to a team member</span></a>
     </div>
   </div>
 
-  <div class="hero-right">
-    <p class="hero-quote">
-      “Go and make disciples of all nations.”
-      <br><br>— Matthew 28:19
-    </p>
+  <!-- NEXT STEPS -->
+  <section id="new">
+    <div class="wrap">
+      <h2 class="title">Take your next step.</h2>
+      <p class="sub">Wherever you are in your faith, there is a simple next step.</p>
+      <div class="grid-3">
+        <article class="card">
+          <h3>Visit on a Sunday</h3>
+          <p>Greeters will welcome you and help with kids' check-in. Services last about 75 minutes.</p>
+          <a href="#contact">Get directions</a>
+        </article>
+        <article class="card">
+          <h3>Join a small group</h3>
+          <p>Meet weekly with neighbors to share a meal, pray, and grow together.</p>
+          <a href="#contact">Get connected</a>
+        </article>
+        <article class="card">
+          <h3>Serve your city</h3>
+          <p>Volunteer with food distribution, mentoring, and community events.</p>
+          <a href="#contact">Sign up to serve</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WATCH -->
+  <section id="watch" class="dark">
+    <div class="wrap split">
+      <div class="video">
+        <!-- Replace VIDEO_ID_HERE with your YouTube video ID -->
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" title="This week's message" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div>
+        <h2 class="title">This week's message</h2>
+        <h3>Message title here</h3>
+        <p>Short description of the series. Watch live every Sunday, or anytime on demand.</p>
+        <a class="btn btn-orange" href="https://www.youtube.com/" target="_blank" rel="noopener">Watch on YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MINISTRIES -->
+  <section id="ministries">
+    <div class="wrap">
+      <h2 class="title">Faith that shows up.</h2>
+      <div class="grid-3">
+        <article class="ministry">
+          <div class="photo-pair">
+            <img src="images/worship-1.png" alt="Congregation worshiping at Christ's Salvation Church" loading="lazy">
+            <img src="images/worship-2.png" alt="Worship team leading music during a service" loading="lazy">
+          </div>
+          <h3>Worship</h3>
+          <p>Sunday gatherings full of music, prayer, and Scripture.</p>
+        </article>
+        <article class="ministry">
+          <div class="photo-pair">
+            <img src="images/outreach-1.png" alt="Volunteers serving the community" loading="lazy">
+            <img src="images/outreach-2.png" alt="Church members helping neighbors in need" loading="lazy">
+          </div>
+          <h3>Community Outreach</h3>
+          <p>Food, clothing, and support for families in need.</p>
+        </article>
+        <article class="ministry">
+          <img src="images/youth.png" alt="Youth ministry gathering" loading="lazy">
+          <h3>Kids and Youth</h3>
+          <p>Safe, fun, faith-building programs for every age.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITE VISITS -->
+  <section id="visits" class="sand">
+    <div class="wrap">
+      <h2 class="title">Site visits.</h2>
+      <p class="sub">Our team visits the communities and partners we serve, so we can listen, learn, and help where it matters most.</p>
+      <div class="visit-grid">
+        <figure class="visit">
+          <img src="images/visit-1.jpg" alt="Church team visiting a community site" loading="lazy">
+          <figcaption>
+            <h3>Location or visit title</h3>
+            <p>One or two sentences about what happened and who was there.</p>
+          </figcaption>
+        </figure>
+        <figure class="visit">
+          <img src="images/visit-2.jpg" alt="Church team meeting with partners on a site visit" loading="lazy">
+          <figcaption>
+            <h3>Location or visit title</h3>
+            <p>One or two sentences about what happened and who was there.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIVE -->
+  <section id="give">
+    <div class="wrap split">
+      <div>
+        <h2 class="title">Your gift becomes help.</h2>
+        <p>Christ's Salvation Church is a registered nonprofit. Gifts are tax-deductible as allowed by law.</p>
+        <ul class="impact">
+          <li><b>$25</b> feeds a family for a week</li>
+          <li><b>$100</b> supports a month of youth mentoring</li>
+          <li><b>$500</b> helps a family in an emergency</li>
+        </ul>
+        <p class="small">Replace these examples with your real programs and amounts.</p>
+      </div>
+      <div class="give-card">
+        <h3>Make a gift</h3>
+        <div class="amts" role="group" aria-label="Gift amount">
+          <button type="button" aria-pressed="false" data-amt="25">$25</button>
+          <button type="button" aria-pressed="true" data-amt="50">$50</button>
+          <button type="button" aria-pressed="false" data-amt="100">$100</button>
+          <button type="button" aria-pressed="false" data-amt="250">$250</button>
+        </div>
+        <!-- Paste your Tithe.ly / Give Lively / PayPal link below -->
+        <a id="give-link" class="btn btn-orange" href="https://YOUR-GIVING-LINK-HERE" target="_blank" rel="noopener">Continue to give</a>
+        <p class="small">You will be taken to our secure giving page.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section id="events" class="sand">
+    <div class="wrap">
+      <h2 class="title">Coming up.</h2>
+      <div class="event">
+        <div class="date">12<small>Oct</small></div>
+        <div><h3>Community Food Drive</h3><p>Saturday, 9:00 AM. Church parking lot.</p></div>
+        <a class="btn btn-outline-dark" href="#contact">Sign up</a>
+      </div>
+      <div class="event">
+        <div class="date">26<small>Oct</small></div>
+        <div><h3>Family Festival</h3><p>Saturday, 4:00 PM. Free food and games.</p></div>
+        <a class="btn btn-outline-dark" href="#contact">Details</a>
+      </div>
+      <div class="event">
+        <div class="date">14<small>Nov</small></div>
+        <div><h3>Serve Day</h3><p>Thursday, 8:00 AM. Projects across the city.</p></div>
+        <a class="btn btn-outline-dark" href="#contact">Join a team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANNUAL CONFERENCE -->
+  <section id="conference" class="dark">
+    <div class="wrap">
+      <h2 class="title">Annual Conference</h2>
+      <p class="sub">Every year we gather believers from near and far for worship, teaching, and fellowship. Here are moments from past conferences.</p>
+
+      <div class="conf-info">
+        <div><b>Next conference</b><span>Month DD-DD, YYYY</span></div>
+        <div><b>Location</b><span>Venue name, City, ST</span></div>
+        <div><b>Register</b><span><a href="#contact">Contact us to sign up</a></span></div>
+      </div>
+
+      <div class="gallery">
+        <button class="g-item" type="button" data-full="images/conference/conf-1.jpg">
+          <img src="images/conference/conf-1.jpg" alt="Attendees at a past annual conference" loading="lazy">
+        </button>
+        <button class="g-item" type="button" data-full="images/conference/conf-2.png">
+          <img src="images/conference/conf-2.png" alt="Speaker addressing the conference" loading="lazy">
+        </button>
+        <button class="g-item" type="button" data-full="images/conference/conf-3.png">
+          <img src="images/conference/conf-3.png" alt="Guests greeting each other at the conference" loading="lazy">
+        </button>
+        <button class="g-item" type="button" data-full="images/conference/conf-4.png">
+          <img src="images/conference/conf-4.png" alt="Group photo from a past conference" loading="lazy">
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / REPS -->
+  <section id="contact" class="sand">
+    <div class="wrap">
+      <h2 class="title">Talk to someone.</h2>
+      <p class="sub">Reach out to the right person on our team. We usually reply within one business day.</p>
+
+      <div class="grid-3">
+        <!-- Copy this card for each representative. Change the initials, name, role, phone, and email. -->
+        <article class="rep">
+          <div class="avatar" aria-hidden="true">PN</div>
+          <h3>Pastor Name</h3>
+          <p class="role">Senior Pastor</p>
+          <a href="tel:+15555550123">(555) 555-0123</a>
+          <a href="mailto:pastor@yourchurch.org">pastor@yourchurch.org</a>
+        </article>
+        <article class="rep">
+          <div class="avatar" aria-hidden="true">TM</div>
+          <h3>Team Member Name</h3>
+          <p class="role">Outreach Coordinator</p>
+          <a href="tel:+15555550124">(555) 555-0124</a>
+          <a href="mailto:outreach@yourchurch.org">outreach@yourchurch.org</a>
+        </article>
+        <article class="rep">
+          <div class="avatar" aria-hidden="true">TM</div>
+          <h3>Team Member Name</h3>
+          <p class="role">Prayer and Care</p>
+          <a href="tel:+15555550125">(555) 555-0125</a>
+          <a href="mailto:prayer@yourchurch.org">prayer@yourchurch.org</a>
+        </article>
+      </div>
+
+      <!-- Sign up free at formspree.io, then replace YOUR_FORM_ID -->
+      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <h3>Send us a message or prayer request</h3>
+        <label for="name">Your name</label>
+        <input id="name" name="name" required>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+        <label for="topic">Topic</label>
+        <select id="topic" name="topic">
+          <option>General question</option>
+          <option>Prayer request</option>
+          <option>Volunteer</option>
+          <option>Visiting for the first time</option>
+        </select>
+        <label for="msg">Message</label>
+        <textarea id="msg" name="message" rows="5" required></textarea>
+        <button class="btn btn-orange" type="submit">Send message</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- PHOTO VIEWER (leave as is) -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+  <button class="lb-close" type="button" aria-label="Close photo">&times;</button>
+  <button class="lb-nav lb-prev" type="button" aria-label="Previous photo">&#8249;</button>
+  <img src="" alt="" id="lb-img">
+  <button class="lb-nav lb-next" type="button" aria-label="Next photo">&#8250;</button>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div>
+      <img src="images/logo-white.png" alt="Christ's Salvation Church" class="foot-logo">
+      <p>Your Street Address<br>City, ST 00000<br>(555) 555-0123 · info@yourchurch.org</p>
+      <p class="small">A registered 501(c)(3) nonprofit. EIN 00-0000000.</p>
+    </div>
+    <div>
+      <h3>Explore</h3>
+      <a href="#new">I'm New</a>
+      <a href="#watch">Watch</a>
+      <a href="#events">Events</a>
+      <a href="#conference">Conference</a>
+      <a href="#give">Give</a>
+    </div>
+    <div>
+      <h3>Follow us</h3>
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">YouTube</a>
+    </div>
   </div>
-</section>
-
-<section class="welcome" id="welcome">
-  <div class="welcome-label">Our Faith</div>
-  <div class="welcome-body">
-    <h2>Rooted in Christ, grounded in Scripture.</h2>
-    <p>
-      Christ’s Salvation Church is a Bible-believing church founded in 2017 in Kansas City, Missouri.
-      We exist to preach the Gospel and make disciples of Jesus Christ.
-    </p>
-  </div>
-</section>
-
-<section class="visit" id="visit">
-  <div class="visit-info">
-    <h2>Visit Us</h2>
-
-    <p><strong>Address:</strong><br>2910 Victor St<br>Kansas City, MO 64128</p>
-    <br>
-    <p><strong>Phone:</strong> 816-492-8571</p>
-    <p><strong>Pastor:</strong> Muhizi Serukiza</p>
-    <p><strong>Email:</strong> mserukiza@gmail.com</p>
-  </div>
-
-  <div class="visit-map">
-    <iframe
-      width="100%"
-      height="100%"
-      style="border:0"
-      loading="lazy"
-      allowfullscreen
-      src="https://www.google.com/maps?q=2910+Victor+St+Kansas+City+MO+64128&output=embed">
-    </iframe>
-  </div>
-</section>
-
-<section class="newsletter" id="newsletter">
-  <h3>Stay connected with our church family.</h3>
-  <input type="email" placeholder="Your email" />
-</section>
-
-<footer>
-  <p>© 2026 Christ’s Salvation Church</p>
-  <p>YouTube: CSC International USA | Instagram: salvation_choirusa</p>
+  <p class="copy">© <span id="year"></span> Christ's Salvation Church. All rights reserved.</p>
 </footer>
+
 <script src="script.js"></script>
 </body>
 </html>

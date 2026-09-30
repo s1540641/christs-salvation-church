@@ -1,54 +1,64 @@
-// ================================
-// Christ’s Salvation Church JS
-// Simple interactions + UX polish
-// ================================
+// Mobile menu
+const menuBtn = document.querySelector('.menu-btn');
+const navList = document.getElementById('nav-list');
+menuBtn.addEventListener('click', () => {
+  const open = navList.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', open);
+});
+navList.addEventListener('click', e => {
+  if (e.target.tagName === 'A') {
+    navList.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  }
+});
 
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
+// Gift amount buttons
+const amtButtons = document.querySelectorAll('.amts button');
+const giveLink = document.getElementById('give-link');
+const baseLink = giveLink.getAttribute('href');
+amtButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    amtButtons.forEach(b => b.setAttribute('aria-pressed', b === btn));
+    // Uncomment if your giving provider accepts an amount in the link:
+    // giveLink.href = `${baseLink}?amount=${btn.dataset.amt}`;
   });
 });
 
+// Footer year
+document.getElementById('year').textContent = new Date().getFullYear();
 
-// Fade-in on scroll (simple reveal effect)
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = 1;
-      entry.target.style.transform = "translateY(0)";
-    }
-  });
-}, {
-  threshold: 0.1
-});
+// Conference gallery viewer
+const items = [...document.querySelectorAll('.g-item')];
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lb-img');
+let current = 0;
 
-document.querySelectorAll(".welcome-body, .visit-info, .hero-left").forEach(el => {
-  el.style.opacity = 0;
-  el.style.transform = "translateY(20px)";
-  el.style.transition = "all 0.8s ease";
-  observer.observe(el);
-});
-
-
-// Newsletter simple validation
-const newsletterBtn = document.querySelector(".newsletter button");
-const newsletterInput = document.querySelector(".newsletter input");
-
-if (newsletterBtn && newsletterInput) {
-  newsletterBtn.addEventListener("click", () => {
-    const email = newsletterInput.value.trim();
-
-    if (!email.includes("@") || !email.includes(".")) {
-      alert("Please enter a valid email address.");
-      return;
-    }
-
-    alert("Thank you for subscribing to Christ’s Salvation Church updates!");
-    newsletterInput.value = "";
-  });
+function showPhoto(i) {
+  current = (i + items.length) % items.length;
+  lbImg.src = items[current].dataset.full;
+  lbImg.alt = items[current].querySelector('img').alt;
 }
+function openLightbox(i) {
+  showPhoto(i);
+  lb.hidden = false;
+  document.body.style.overflow = 'hidden';
+  lb.querySelector('.lb-close').focus();
+}
+function closeLightbox() {
+  lb.hidden = true;
+  lbImg.src = '';
+  document.body.style.overflow = '';
+  items[current].focus();
+}
+
+items.forEach((item, i) => item.addEventListener('click', () => openLightbox(i)));
+lb.querySelector('.lb-close').addEventListener('click', closeLightbox);
+lb.querySelector('.lb-prev').addEventListener('click', () => showPhoto(current - 1));
+lb.querySelector('.lb-next').addEventListener('click', () => showPhoto(current + 1));
+lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+document.addEventListener('keydown', e => {
+  if (lb.hidden) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') showPhoto(current - 1);
+  if (e.key === 'ArrowRight') showPhoto(current + 1);
+});
