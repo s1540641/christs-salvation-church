@@ -23,6 +23,7 @@ h3{font-weight:700;font-size:1.2rem;line-height:1.25;margin-bottom:6px}
 .sand{background:var(--sand)}
 .dark{background:var(--navy);color:#fff}
 .dark .sub{color:#c9d5e6}
+.dir{color:var(--orange);font-weight:600}
 
 /* Buttons */
 .btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:600;text-decoration:none;border:0;cursor:pointer;font-family:var(--font);font-size:1rem}
@@ -63,9 +64,18 @@ nav a:not(.btn):hover{color:var(--orange)}
 .quick span{display:block;font-weight:400;font-size:.9rem;opacity:.9}
 .quick a:hover{background:var(--navy)}
 
+/* Mission */
+.mission{display:grid;grid-template-columns:1.5fr 1fr;gap:56px;align-items:start}
+.mission-text p{margin-bottom:18px;color:var(--muted);max-width:62ch}
+.mission-text .mission-lead{font-size:1.35rem;line-height:1.5;font-weight:600;color:var(--navy)}
+.pillars{list-style:none;padding:0;border-left:4px solid var(--orange)}
+.pillars li{padding:14px 0 14px 22px;font-size:1.15rem;font-weight:600;border-bottom:1px solid #e6e9ee}
+.pillars li:last-child{border-bottom:0}
+
 /* Cards and grids */
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .card{background:var(--sand);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;gap:10px}
+.card.white{background:#fff}
 .card p{color:var(--muted);flex:1}
 .card a{color:var(--orange);font-weight:600}
 .split{display:grid;grid-template-columns:1.2fr 1fr;gap:52px;align-items:center}
@@ -88,8 +98,7 @@ nav a:not(.btn):hover{color:var(--orange)}
 
 /* Give */
 .impact{list-style:none;padding:0;margin-top:22px}
-.impact li{padding:14px 0;border-bottom:1px solid #d9dde4}
-.impact b{font-size:1.5rem;font-weight:800;color:var(--orange);margin-right:8px}
+.impact li{padding:14px 0;border-bottom:1px solid #d9dde4;font-weight:500}
 .give-card{background:var(--sand);border-radius:var(--radius);padding:32px}
 .amts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:18px 0 22px}
 .amts button{padding:13px 0;border:2px solid #d9dde4;background:#fff;border-radius:10px;font:600 1rem var(--font);cursor:pointer}
@@ -121,15 +130,13 @@ nav a:not(.btn):hover{color:var(--orange)}
 .lb-prev{left:20px}
 .lb-next{right:20px}
 
-/* Contact reps */
+/* Contact */
 .rep{background:#fff;border-radius:var(--radius);padding:24px;text-align:center}
 .avatar{width:130px;height:130px;border-radius:50%;margin:0 auto 14px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:700;font-size:2rem}
 .rep img{width:130px;height:130px;object-fit:cover;border-radius:50%;margin:0 auto 14px}
 .role{color:var(--orange);font-weight:600;font-size:.95rem;margin-bottom:10px}
 .rep a{display:block;text-decoration:none;color:var(--muted);word-break:break-word}
 .rep a:hover{color:var(--orange)}
-
-/* Form */
 .contact-form{background:#fff;border-radius:var(--radius);padding:32px;max-width:640px;margin-top:40px}
 .contact-form label{display:block;font-weight:600;margin:14px 0 6px;font-size:.95rem}
 .contact-form input,.contact-form select,.contact-form textarea{width:100%;padding:12px;border:2px solid #d9dde4;border-radius:10px;font:inherit}
@@ -142,23 +149,25 @@ nav a:not(.btn):hover{color:var(--orange)}
 .site-footer h3{color:#fff;font-size:1rem}
 .site-footer a{display:block;text-decoration:none;padding:3px 0}
 .site-footer a:hover{color:var(--orange)}
+.site-footer .small{color:#8ea0b8;margin-top:8px}
 .copy{text-align:center;margin-top:36px;font-size:.85rem}
 
-/* Tablet and mobile */
+/* Collapse menu on tablets and phones */
 @media(max-width:1000px){
-  nav ul{gap:16px}
-  nav a{font-size:.88rem}
-}
-@media(max-width:900px){
-  section{padding:60px 0}
-  .hero-grid,.split,.grid-3,.foot-grid,.visit-grid{grid-template-columns:1fr}
-  .quick .wrap{grid-template-columns:1fr 1fr}
-  .conf-info{grid-template-columns:1fr}
-  .gallery{grid-template-columns:1fr 1fr}
   .menu-btn{display:block}
   nav ul{display:none;position:absolute;left:0;right:0;top:76px;background:var(--navy);flex-direction:column;align-items:flex-start;padding:20px 24px 28px;gap:16px}
   nav ul.open{display:flex}
   nav a{font-size:1rem}
+}
+
+/* Stack layouts on tablets and phones */
+@media(max-width:900px){
+  section{padding:60px 0}
+  .hero-grid,.split,.grid-3,.foot-grid,.visit-grid,.mission{grid-template-columns:1fr}
+  .mission{gap:28px}
+  .quick .wrap{grid-template-columns:1fr 1fr}
+  .conf-info{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr 1fr}
   .event{grid-template-columns:70px 1fr}
   .event .btn{grid-column:2;justify-self:start}
 }
