@@ -8,7 +8,7 @@
   <link rel="icon" href="images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -22,10 +22,7 @@
       <ul id="nav-list">
         <li><a href="#about">About</a></li>
         <li><a href="#new">I'm New</a></li>
-        <li><a href="#watch">Watch</a></li>
         <li><a href="#ministries">Ministries</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#conference">Conference</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a class="btn btn-orange" href="#give">Give</a></li>
       </ul>
@@ -35,26 +32,28 @@
 
 <main id="top">
 
-    <!-- HERO -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-photo" style="background-image:url('images/hero.png')"></div>
     <div class="wrap hero-grid">
       <div>
-        <h1>Come as you are.</h1>
+        <h1 class="sr-only">Christ's Salvation Church</h1>
+        <blockquote class="motto">
+          <p>“Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, and teaching them to obey everything I have commanded you. And surely I am with you always, to the very end of the age.”</p>
+          <cite>Matthew 28:19–20 (NIV)</cite>
+        </blockquote>
         <p class="lead">Following Christ. Serving others. Being transformed. Join us Sundays at 1:30 PM.</p>
         <div class="btn-row">
           <a class="btn btn-orange" href="#new">Plan your visit</a>
-          <a class="btn btn-outline" href="#watch">Watch online</a>
         </div>
       </div>
     </div>
   </section>
 
-
   <!-- QUICK ACTIONS -->
   <div class="quick">
     <div class="wrap">
-      <a href="#watch">Watch online<span>New message weekly</span></a>
+      <a href="#about">Our mission<span>Who we are</span></a>
       <a href="#new">Plan a visit<span>What to expect</span></a>
       <a href="#give">Give<span>Support our ministry</span></a>
       <a href="#contact">Contact us<span>Talk to a team member</span></a>
@@ -107,24 +106,6 @@
     </div>
   </section>
 
-  <!-- WATCH -->
-<!-- <section id="watch" class="dark">
-    <div class="wrap split">
-      <div class="video">
-       Replace VIDEO_ID_HERE with your YouTube video ID.
-             If you do not stream, delete this whole WATCH section and the "Watch" links elsewhere. 
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" title="Latest message" allowfullscreen loading="lazy"></iframe>
-      </div>
-      <div>
-        <h2 class="title">Latest message</h2>
-        <h3>Message title here</h3>
-        <p>Short description of the message. Join us in person on Sundays at 1:30 PM.</p>
-        <a class="btn btn-orange" href="https://www.youtube.com/" target="_blank" rel="noopener">Watch on YouTube</a>
-      </div>
-    </div>
-  </section> 
--->
-
   <!-- MINISTRIES -->
   <section id="ministries">
     <div class="wrap">
@@ -159,21 +140,13 @@
   <section id="visits" class="sand">
     <div class="wrap">
       <h2 class="title">Site visits.</h2>
-      <p class="sub">Come on a Pilgrimage tour!.</p>
+      <p class="sub">Come on a Pilgrimage tour!</p>
       <div class="visit-grid">
         <figure class="visit">
           <img src="images/visit-1.jpg" alt="Church team on a site visit" loading="lazy">
           <figcaption>
             <h3>2025-2026 Israel Visit</h3>
-            <p>My time in Israel allowed me to experience the places I had read about throughout Scripture in a way I never could have imagined. Walking through Jerusalem, seeing the Sea of Galilee, visiting Bethlehem, and standing in places connected to Jesus’ life and ministry made the Bible feel more tangible and personal to me. There were moments when I found myself reflecting on the stories I had grown up hearing and realizing that these were real places where generations before me had worshiped, prayed, and encountered God. More than simply seeing historical sites, the pilgrimage gave me time to slow down, reflect on my faith, and appreciate the depth of Scripture and the history behind it. I returned home with a renewed sense of gratitude and a deeper desire to continue growing in my relationship with God and sharing what this experience has meant to me.
-</p>
-          </figcaption>
-        </figure>
-        <figure class="visit">
-          <img src="images/visit-2.jpg" alt="Church team meeting partners on a site visit" loading="lazy">
-          <figcaption>
-            <h3>Location or visit title</h3>
-            <p>One or two sentences about what happened and who was there.</p>
+            <p>My time in Israel allowed me to experience the places I had read about throughout Scripture in a way I never could have imagined. Walking through Jerusalem, seeing the Sea of Galilee, visiting Bethlehem, and standing in places connected to Jesus’ life and ministry made the Bible feel more tangible and personal to me. There were moments when I found myself reflecting on the stories I had grown up hearing and realizing that these were real places where generations before me had worshiped, prayed, and encountered God. More than simply seeing historical sites, the pilgrimage gave me time to slow down, reflect on my faith, and appreciate the depth of Scripture and the history behind it. I returned home with a renewed sense of gratitude and a deeper desire to continue growing in my relationship with God and sharing what this experience has meant to me.</p>
           </figcaption>
         </figure>
       </div>
@@ -193,63 +166,11 @@
         </ul>
       </div>
       <div class="give-card">
-        <h3>Make a gift</h3>
-        <div class="amts" role="group" aria-label="Gift amount">
-          <button type="button" aria-pressed="false" data-amt="25">$25</button>
-          <button type="button" aria-pressed="true" data-amt="50">$50</button>
-          <button type="button" aria-pressed="false" data-amt="100">$100</button>
-          <button type="button" aria-pressed="false" data-amt="250">$250</button>
-        </div>
-        <!-- Paste your Tithe.ly / Give Lively / PayPal / Cash App giving link below -->
-        <a id="give-link" class="btn btn-orange" href="https://YOUR-GIVING-LINK-HERE" target="_blank" rel="noopener">Continue to give</a>
-        <p class="small">You will be taken to our secure giving page.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- EVENTS -->
-  <section id="events" class="sand">
-    <div class="wrap">
-      <h2 class="title">Coming up.</h2>
-      <!-- Replace these examples with your real events, or delete them -->
-      <div class="event">
-        <div class="date">00<small>Month</small></div>
-        <div><h3>Event name</h3><p>Day, time, and place.</p></div>
-        <a class="btn btn-outline-dark" href="#contact">Details</a>
-      </div>
-      <div class="event">
-        <div class="date">00<small>Month</small></div>
-        <div><h3>Event name</h3><p>Day, time, and place.</p></div>
-        <a class="btn btn-outline-dark" href="#contact">Details</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ANNUAL CONFERENCE -->
-  <section id="conference" class="dark">
-    <div class="wrap">
-      <h2 class="title">Annual Conference</h2>
-      <p class="sub">Every year we gather believers from near and far for worship, teaching, and fellowship. Here are moments from past conferences.</p>
-
-      <div class="conf-info">
-        <div><b>Next conference</b><span>Month DD-DD, YYYY</span></div>
-        <div><b>Location</b><span>Venue name, City, ST</span></div>
-        <div><b>Register</b><span><a href="#contact">Contact us to sign up</a></span></div>
-      </div>
-
-      <div class="gallery">
-        <button class="g-item" type="button" data-full="images/conference/conf-1.jpg">
-          <img src="images/conference/conf-1.jpg" alt="Attendees at a past annual conference" loading="lazy">
-        </button>
-        <button class="g-item" type="button" data-full="images/conference/conf-2.png">
-          <img src="images/conference/conf-2.png" alt="Speaker addressing the conference" loading="lazy">
-        </button>
-        <button class="g-item" type="button" data-full="images/conference/conf-3.png">
-          <img src="images/conference/conf-3.png" alt="Guests greeting each other at the conference" loading="lazy">
-        </button>
-        <button class="g-item" type="button" data-full="images/conference/conf-4.png">
-          <img src="images/conference/conf-4.png" alt="Group photo from a past conference" loading="lazy">
-        </button>
+        <h3>Give</h3>
+        <p>Online giving is coming soon. To give in the meantime, please email us at <a href="mailto:info@christsc.org">info@christsc.org</a>.</p>
+        <!-- When your giving page is ready, replace the paragraph above with:
+        <a id="give-link" class="btn btn-orange" href="YOUR-GIVING-LINK" target="_blank" rel="noopener">Give now</a>
+        -->
       </div>
     </div>
   </section>
@@ -262,18 +183,16 @@
 
       <div class="grid-3">
         <article class="rep">
-          <div class="avatar" aria-hidden="true">MS</div>
-          <h3>Pastor Muhizi Serukiza</h3>
-          <p class="role">Pastor</p>
-          <a href="tel:+18164928571">(816) 492-8571</a>
-          <a href="mailto:csc@christsc.org">csc@christsc.org</a>
-        </article>
-        <article class="rep">
           <div class="avatar" aria-hidden="true">CO</div>
           <h3>Church Office</h3>
           <p class="role">General questions</p>
-          <a href="tel:+18164928571">(816) 492-8571</a>
-          <a href="mailto:csc@christsc.org">csc@christsc.org</a>
+          <a href="mailto:info@christsc.org">info@christsc.org</a>
+        </article>
+        <article class="rep">
+          <div class="avatar" aria-hidden="true">OR</div>
+          <h3>Community Outreach</h3>
+          <p class="role">Serving our community</p>
+          <a href="mailto:Outreach@christsc.org">Outreach@christsc.org</a>
         </article>
         <article class="rep">
           <div class="avatar" aria-hidden="true">PC</div>
@@ -283,9 +202,11 @@
         </article>
       </div>
 
-      <!-- Sign up free at formspree.io with csc@christsc.org, then replace YOUR_FORM_ID -->
-      <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <!-- Replace YOUR_FORM_ID with your Formspree form ID -->
+      <form class="contact-form" id="contact-form" action="https://formspree.io/f/xljjjzqb" method="POST">
         <h3>Send us a message or prayer request</h3>
+        <input type="hidden" name="_subject" value="New message from christsc.org">
+        <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label for="name">Your name</label>
         <input id="name" name="name" required>
         <label for="email">Email</label>
@@ -300,6 +221,7 @@
         <label for="msg">Message</label>
         <textarea id="msg" name="message" rows="5" required></textarea>
         <button class="btn btn-orange" type="submit">Send message</button>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
   </section>
@@ -318,7 +240,7 @@
   <div class="wrap foot-grid">
     <div>
       <img src="images/logo-white.png" alt="Christ's Salvation Church" class="foot-logo">
-      <p>2910 Victor St<br>Kansas City, MO 64128<br>(816) 492-8571 · csc@christsc.org</p>
+      <p>2910 Victor St<br>Kansas City, MO 64128<br>info@christsc.org · Outreach@christsc.org</p>
       <p class="small">Mailing address: 2519 Park Ave, Kansas City, MO 64127</p>
       <p class="small">Member church of USMB (U.S. Conference of Mennonite Brethren Churches).</p>
     </div>
@@ -326,16 +248,14 @@
       <h3>Explore</h3>
       <a href="#about">About</a>
       <a href="#new">I'm New</a>
-      <a href="#watch">Watch</a>
-      <a href="#events">Events</a>
-      <a href="#conference">Conference</a>
+      <a href="#ministries">Ministries</a>
       <a href="#give">Give</a>
+      <a href="#contact">Contact</a>
     </div>
     <div>
       <h3>Follow us</h3>
       <p class="small">#ChristsSalvationChurch<br>#Savedbygrace</p>
       <a href="https://www.instagram.com/christs_salvation_church" target="_blank" rel="noopener">Instagram</a>
-      <!-- Add Facebook or YouTube links here if you have them -->
     </div>
   </div>
   <p class="copy">© <span id="year"></span> Christ's Salvation Church. All rights reserved.</p>
